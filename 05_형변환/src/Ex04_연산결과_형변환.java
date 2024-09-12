@@ -22,3 +22,6 @@ public class Ex04_연산결과_형변환 {
   System.out.println(a);
   }
 }
+
+
+
