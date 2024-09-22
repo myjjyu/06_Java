@@ -12,7 +12,7 @@ public class Ex08_파라미터_참조복사 {
   }
 
   public static void foo(int[] copy){
-    for(int i=0; i<copy.length, i++) {
+    for(int i=0; i<copy.length; i++) {
       copy[i] += 100;
     }
     System.out.println("copy[0]=" + copy[0]);
