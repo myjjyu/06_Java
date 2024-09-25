@@ -32,7 +32,7 @@ public class Student {
     this.math = math;
   }
   
-
+  
   @Override
   public String toString() {
     return "{" +
@@ -41,6 +41,4 @@ public class Student {
       ", math='" + getMath() + "'" +
       "}";
   }
-
-
 }
