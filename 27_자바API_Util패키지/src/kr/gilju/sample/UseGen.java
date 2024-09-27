@@ -1,4 +1,12 @@
 package kr.gilju.sample;
-public class UseGen {
-  
+public class UseGen<T> {
+  private T sample;
+
+    public T getSample() {
+        return this.sample;
+    }
+
+    public void setSample(T sample) {
+        this.sample = sample;
+    }
 }

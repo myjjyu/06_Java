@@ -1,4 +1,4 @@
-package kr.gilju.helper;
+package kr.gilju.helpers;
 
 public class UtilHelper {
     private static  UtilHelper current;

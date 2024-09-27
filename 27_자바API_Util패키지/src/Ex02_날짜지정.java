@@ -1,6 +1,6 @@
 
 import java.util.Calendar;
-import kr.gilju.helper.DatePrinter;
+import kr.gilju.helpers.DatePrinter;
 
 
 public class Ex02_날짜지정 {

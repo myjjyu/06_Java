@@ -1,4 +1,4 @@
-package kr.gilju.helper;
+package kr.gilju.helpers;
 import java.util.Calendar;
 
 public class DatePrinter {

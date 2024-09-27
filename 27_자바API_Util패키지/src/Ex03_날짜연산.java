@@ -1,5 +1,5 @@
 import java.util.Calendar;
-import kr.gilju.helper.DatePrinter;
+import kr.gilju.helpers.DatePrinter;
 
 public class Ex03_날짜연산 {
   public static void main(String[] args) {
