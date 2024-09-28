@@ -8,9 +8,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 
+/**
+ * 파일 입출력을 위한 기능을 제공하는 클래스
+ */
 public class FileHelper {
 
-  // 싱글톤 객체
+  /** 싱클톤 객체 */
   private static FileHelper current = null;
 
   public static FileHelper getInstance() {
@@ -30,16 +33,17 @@ public class FileHelper {
 
   /**
    * 파일에 데이터를 쓰는 메서드
-   * @param filePath
-   * @param data
-   * @throws Exception
+   * 
+   * @param filePath - 파일경로
+   * @param data     - 저장할 데이터
+   * @throws Exception - 파일 입출력 예외
    */
   public void write(String filePath, byte[] data) throws Exception {
     OutputStream os = null;
     try {
-      //저장할 파일 스트림 생성
+      // 저장할 파일 스트림 생성
       os = new FileOutputStream(filePath);
-      //파일쓰기
+      // 파일쓰기
       os.write(data);
     } catch (FileNotFoundException e) {
       e.printStackTrace();
@@ -60,16 +64,16 @@ public class FileHelper {
         } catch (IOException e) {
           e.printStackTrace();
         }
-      } //end if
-    }//try ~catch ~finally
+      } // end if
+    } // try ~catch ~finally
   }
-  
 
   /**
    * 파일에서 데이터를 읽는 메서드
-   * @param filePath
-   * @return
-   * @throws Exception
+   * 
+   * @param filePath - 파일경로
+   * @return -파일에 저장된 데이터
+   * @throws Exception - 파일 입출력 예외
    */
   public byte[] read(String filePath) throws Exception {
     byte[] data = null;
@@ -81,15 +85,15 @@ public class FileHelper {
       is.read(data);
 
     } catch (FileNotFoundException e) {
-       e.printStackTrace();
+      e.printStackTrace();
       throw e;
 
     } catch (IOException e) {
-    e.printStackTrace();
+      e.printStackTrace();
       throw e;
 
     } catch (Exception e) {
-    e.printStackTrace();
+      e.printStackTrace();
       throw e;
 
     } finally {
@@ -106,9 +110,10 @@ public class FileHelper {
 
   /**
    * 파일에 문자열을 쓰는 메서드
-   * @param filePath
-   * @param content
-   * @throws Exception
+   * 
+   * @param filePath - 파일경로
+   * @param content  - 저장할 문자열
+   * @throws Exception - 파일 입출력 예외
    */
   public void writeString(String filePath, String content) throws Exception {
     try {
@@ -124,9 +129,10 @@ public class FileHelper {
 
   /**
    * 파일에서 문자열을 읽는 메서드
-   * @param filePath
-   * @return
-   * @throws Exception
+   * 
+   * @param filePath -파일경로
+   * @return - 파일에 저장된 문자열
+   * @throws Exception - 파일 입출력 예외
    */
   public String readString(String filePath) throws Exception {
     String content = null;
