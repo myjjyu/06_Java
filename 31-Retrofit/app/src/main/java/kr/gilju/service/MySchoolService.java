@@ -13,24 +13,24 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface MySchoolService {
-  @GET("/department")
-  Call<List<Department>> getDepartments();
+    @GET("/department")
+    Call<List<Department>> getDepartments(); // 부서 목록 가져오기
 
-  @GET("/professor")
-  Call<List<Professor>> getProfessors();
+    @GET("/professor")
+    Call<List<Professor>> getProfessors(); // 교수 목록 가져오기
 
-  @GET("/student")
-  Call<List<Student>> getStudents();
+    @GET("/student")
+    Call<List<Student>> getStudents(); // 학생 목록 가져오기
 
-  @GET("/grade")
-  Call<List<Grade>> getGrades();
+    @GET("/grade")
+    Call<List<Grade>> getGrades(); // 성적 목록 가져오기
 
-  @GET("/news")
-  Call<List<News>> getNewss();
+    @GET("/news")
+    Call<List<News>> getNewss(); // 뉴스 목록 가져오기
 
-  @GET("/titanic")
-  Call<List<Titanic>> getTitanics();
+    @GET("/titanic")
+    Call<List<Titanic>> getTitanics(); // 타이타닉 관련 데이터 가져오기
 
-  @GET("/traffic_acc")
-  Call<List<TrafficAcc>> getTrafficAccs();
+    @GET("/traffic_acc")
+    Call<List<TrafficAcc>> getTrafficAccs(); // 교통사고 데이터 가져오기
 }

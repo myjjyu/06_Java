@@ -11,14 +11,14 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class App {
+public class App01 {
     public static void main(String[] args) {
-        /** 1) 점속 초기화 */
+        /** 1) 접속 초기화 */  
         // 접속하고자 하는 기본 주소 정의
         String baseUrl = "http://localhost:3001";
         // 통신 객체를 생성하기 위한 builder 객체 정의
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
-        // builder 를 통해 총신객체 생성
+        // builder 를 통해 통신객체 생성
         OkHttpClient httpClient = httpClientBuilder.build();
 
         // Retrofit 을 생성하는 기능을 수행하는 객체 정의
@@ -38,6 +38,7 @@ public class App {
 
         /** 2) 비즈니스 로직 처리 */
         MySchoolService service = retrofit.create(MySchoolService.class);
+
 
         // 메서드를 호출해서 call 객체를 리턴받는다
         Call<List<Department>> call = service.getDepartments();
