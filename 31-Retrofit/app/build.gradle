@@ -51,7 +51,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'kr.gilju.lombok_ex.App01'
+    mainClass = 'kr.gilju.retrofit_ex.App01'
 }
 
 tasks.named('test') {
