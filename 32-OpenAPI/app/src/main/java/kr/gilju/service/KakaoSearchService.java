@@ -12,7 +12,7 @@ public interface  KakaoSearchService {
  * @param query
  * @return
  */
-  @Headers({"Authorization: KakaoAK f5af340f85889a417c937a415881a2fc"})
+  @Headers({"Authorization: KakaoAK e626a56840ed86a4931852cf4a59e0e8"})
   @GET("/v2/search/image")
   Call<KakaoImage> searchImage(@Query("query") String query);
 }

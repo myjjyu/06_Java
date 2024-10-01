@@ -24,20 +24,19 @@ dependencies {
     // This dependency is used by the application.
     implementation libs.guava
 
-    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+           // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation 'com.google.code.gson:gson:2.11.0'
 
-    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+       // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compileOnly 'org.projectlombok:lombok:1.18.34'
 
-    // 직접 추가한 구문
+       // 직접 추가한 구문
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
 
-
-    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+        // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.11.0'
 
-    // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
+        // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
     implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
 
 }
@@ -51,7 +50,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'kr.gilju.openapi_ex.App01'
+    mainClass = 'kr.gilju.openapi_ex.App'
 }
 
 tasks.named('test') {

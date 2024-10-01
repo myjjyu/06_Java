@@ -48,5 +48,4 @@ public class KakaoImage {
     @SerializedName("total_count")
     private int totalCount;
   }
-
 }

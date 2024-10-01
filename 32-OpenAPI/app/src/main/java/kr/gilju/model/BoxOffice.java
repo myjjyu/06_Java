@@ -4,6 +4,7 @@ import java.util.List;
 
 import lombok.Data;
 
+@Data
 public class BoxOffice {
   private BoxOfficeResult boxOfficeResult;
 
@@ -11,7 +12,7 @@ public class BoxOffice {
   public class BoxOfficeResult {
     private String boxOfficeType;
     private String showRange;
-    private List<DailyBoxOfficeList> DailyBoxOfficeList;
+    private List<DailyBoxOfficeList> dailyBoxOfficeList;
 
     @Data
     public class DailyBoxOfficeList {

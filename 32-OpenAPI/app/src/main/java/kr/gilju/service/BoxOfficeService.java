@@ -13,6 +13,6 @@ public interface  BoxOfficeService {
    * @param targetDt 조회하고자 하는 날짜
    * @return BoxOffice 객체
    */
-  @GET("/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=3882b7cb2470562d643bcf016d0a35fe")
+  @GET("/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f24100d4c026fce55031e6e17cbd0f55")
   Call<BoxOffice> getBoxOffice(@Query("targetDt") String targetDt);
 }
