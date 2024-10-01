@@ -24,9 +24,9 @@
       "loc": "3호관"
     },
     {
-      "id": 202,
-      "dname": "기계공학과",
-      "loc": "4호관"
+      "dname": "컴퓨터공학과",
+      "loc": "101",
+      "id": 202
     },
     {
       "dname": "메가스자바",
@@ -37,6 +37,11 @@
       "dname": "테스트",
       "loc": "304",
       "id": 204
+    },
+    {
+      "dname": "hello",
+      "loc": "102",
+      "id": 205
     }
   ],
   "professor": [
@@ -119,6 +124,46 @@
       "hiredate": "1990-10-17T15:00:00.000Z",
       "comm": 17,
       "deptno": 202
+    },
+    {
+      "id": "2000",
+      "name": "",
+      "userid": "gilju",
+      "position": "강사",
+      "sal": "300",
+      "hiredate": "20240930",
+      "comm": "100",
+      "deptno": "405"
+    },
+    {
+      "id": "2001",
+      "name": "",
+      "userid": "mega",
+      "position": "강사",
+      "sal": "300",
+      "hiredate": "20240930",
+      "comm": "100",
+      "deptno": "505"
+    },
+    {
+      "id": "2003",
+      "name": "",
+      "userid": "mega",
+      "position": "강사",
+      "sal": "300",
+      "hiredate": "20021010",
+      "comm": "300",
+      "deptno": "202"
+    },
+    {
+      "name": "스터디",
+      "userid": "study",
+      "position": "교수",
+      "sal": "500",
+      "hiredate": "20111111",
+      "comm": "500",
+      "deptno": "400",
+      "id": "303"
     }
   ],
   "student": [
