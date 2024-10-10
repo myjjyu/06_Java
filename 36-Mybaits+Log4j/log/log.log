@@ -1,0 +1,70 @@
+2024-10-10 22:16:16,337 DEBUG [org.apache.ibatis.logging.LogFactory] Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+2024-10-10 22:16:16,341 DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] PooledDataSource forcefully closed/removed all connections.
+2024-10-10 22:16:16,341 DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] PooledDataSource forcefully closed/removed all connections.
+2024-10-10 22:16:16,341 DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] PooledDataSource forcefully closed/removed all connections.
+2024-10-10 22:16:16,341 DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] PooledDataSource forcefully closed/removed all connections.
+2024-10-10 22:16:16,368 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] Opening JDBC Connection
+2024-10-10 22:16:16,509 DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] Created connection 188791662.
+2024-10-10 22:16:16,509 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@b40bb6e]
+2024-10-10 22:16:16,511 DEBUG [ProfessorMapper.selectList] ==>  Preparing: SELECT profno, name, userid, position, sal, hiredate, comm, deptno FROM professor;
+2024-10-10 22:16:16,522 DEBUG [ProfessorMapper.selectList] ==> Parameters: 
+2024-10-10 22:16:16,538 DEBUG [ProfessorMapper.selectList] <==      Total: 7
+2024-10-10 22:16:16,540 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수번호: 9901
+2024-10-10 22:16:16,540 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수이름: 김도훈
+2024-10-10 22:16:16,540 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수아이디: capool
+2024-10-10 22:16:16,540 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수직급: 교수
+2024-10-10 22:16:16,540 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수급여: 500
+2024-10-10 22:16:16,541 DEBUG [kr.gilju.mybaits_ex.Professor02] 입사날짜: 1982-06-12 00:00:00
+2024-10-10 22:16:16,541 DEBUG [kr.gilju.mybaits_ex.Professor02] 성과금: 20
+2024-10-10 22:16:16,541 DEBUG [kr.gilju.mybaits_ex.Professor02] 학과번호: 101
+2024-10-10 22:16:16,541 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수번호: 9902
+2024-10-10 22:16:16,541 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수이름: 이재우
+2024-10-10 22:16:16,542 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수아이디: sweat413
+2024-10-10 22:16:16,542 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수직급: 조교수
+2024-10-10 22:16:16,542 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수급여: 320
+2024-10-10 22:16:16,542 DEBUG [kr.gilju.mybaits_ex.Professor02] 입사날짜: 1995-04-12 00:00:00
+2024-10-10 22:16:16,542 DEBUG [kr.gilju.mybaits_ex.Professor02] 성과금: null
+2024-10-10 22:16:16,542 DEBUG [kr.gilju.mybaits_ex.Professor02] 학과번호: 201
+2024-10-10 22:16:16,543 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수번호: 9903
+2024-10-10 22:16:16,543 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수이름: 성연희
+2024-10-10 22:16:16,543 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수아이디: pascal
+2024-10-10 22:16:16,543 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수직급: 조교수
+2024-10-10 22:16:16,543 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수급여: 360
+2024-10-10 22:16:16,543 DEBUG [kr.gilju.mybaits_ex.Professor02] 입사날짜: 1993-03-17 00:00:00
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 성과금: 15
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 학과번호: 101
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수번호: 9905
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수이름: 권혁일
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수아이디: refresh
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수직급: 교수
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수급여: 450
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 입사날짜: 1986-02-11 00:00:00
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 성과금: 25
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 학과번호: 102
+2024-10-10 22:16:16,544 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수번호: 9906
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수이름: 이만식
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수아이디: pocari
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수직급: 부교수
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수급여: 420
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 입사날짜: 1988-07-11 00:00:00
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 성과금: null
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 학과번호: 101
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수번호: 9907
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수이름: 전은지
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수아이디: totoro
+2024-10-10 22:16:16,545 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수직급: 전임강사
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수급여: 210
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 입사날짜: 2001-05-11 00:00:00
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 성과금: null
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 학과번호: 101
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수번호: 9918
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수이름: 메가
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수아이디: 메가스터디
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수직급: 교수
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 교수급여: 350
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 입사날짜: 2020-11-11 00:00:00
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 성과금: 40
+2024-10-10 22:16:16,546 DEBUG [kr.gilju.mybaits_ex.Professor02] 학과번호: 202
+2024-10-10 22:16:16,546 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@b40bb6e]
+2024-10-10 22:16:16,547 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@b40bb6e]
+2024-10-10 22:16:16,547 DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] Returned connection 188791662 to pool.
