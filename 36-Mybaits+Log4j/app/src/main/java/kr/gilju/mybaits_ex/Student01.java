@@ -7,71 +7,77 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import kr.gilju.MyBatisConnectionFactory;
-import kr.gilju.models.Professor;
+import kr.gilju.models.Student;
 
 public class Student01 {
   public static void main(String[] args) {
     /** new log4h2객체생성 */
-    Logger logger = LogManager.getLogger(Professor01.class);
+    Logger logger = LogManager.getLogger(Student01.class);
 
     /** 1) 저장할 데이터와 입력받기 */
     Scanner scanner = new Scanner(System.in);
 
-    // System.out.print("교수번호: ");
-    // int profno = scanner.nextInt();
-
-    // scanner.nextLine();
-
     System.out.print("이름: ");
     String name = scanner.nextLine();
 
-    System.out.print("교수아이디: ");
+    System.out.print("학생아이디: ");
     String userid = scanner.nextLine();
 
-    System.out.print("직급: ");
-    String position = scanner.nextLine();
-
-    System.out.print("급여: ");
-    int sal = scanner.nextInt();
+    System.out.print("학년: ");
+    int grade = scanner.nextInt();
 
     scanner.nextLine();
 
-    System.out.print("입사날짜: ");
-    String hiredate = scanner.nextLine();
+    System.out.print("주민번호: ");
+    String idnum = scanner.nextLine();
 
-    System.out.print("성과금: ");
-    Integer comm = scanner.nextInt();
+    System.out.print("생일:");
+    String birthdate = scanner.nextLine();
 
-    System.out.print("부서번호: ");
+    System.out.print("전화번호: ");
+    String tel = scanner.nextLine();
+
+    System.out.print("키(cm): ");
+    int height = scanner.nextInt();
+
+    System.out.print("몸무게(kg): ");
+    int weight = scanner.nextInt();
+
+    System.out.print("학과번호: ");
     int deptNo = scanner.nextInt();
+
+    System.out.print("담당교수번호: ");
+    Integer profNo = scanner.nextInt();
 
     scanner.close();
 
     // 입력값을 로그로 기록함
-    logger.debug("입력된 데이터: " + name + ", " + userid + ", " + position + ", " + sal + ", " + hiredate + ", " + comm +"," + deptNo );
-
+    logger.debug("입력된 데이터:" + name + ", " + userid + ", " + grade + ", " + idnum + ", " + birthdate + ", " + tel + ", " + height + ", " + weight + ", " + deptNo + ", " + profNo);
     /** 2) 데이터베이스 접속 */
     SqlSession sqlSession = MyBatisConnectionFactory.getSqlSession();
 
     /** 3)insert 를 수행할 데이터생성 */
-    Professor professor = new Professor();
-    professor.setName(name);
-    professor.setUserid(userid);
-    professor.setPosition(position);
-    professor.setSal(sal);
-    professor.setHiredate(hiredate);
-    professor.setComm(comm);
-    professor.setDeptNo(deptNo);
+    Student student = new Student(); // Student 객체 생성
+        student.setName(name);
+        student.setUserid(userid);
+        student.setGrade(grade);
+        student.setIdnum(idnum);
+        student.setBirthdate(birthdate);
+        student.setTel(tel);
+        student.setHeight(height);
+        student.setWeight(weight);
+        student.setDeptNo(deptNo);
+        student.setProfNo(profNo);
 
     /** 4) 데이터 저장 */
     int result = 0;
 
     try {
-      // ProfessorMappers 이라는 namespace를 갖는 xml 에서
-      // id 값이 add_professor <insert> 태그를 호출한다
-      sqlSession.insert("ProfessorMapper.insert", professor);
+     // StudentMapper라는 namespace를 갖는 xml에서
+     // id 값이 insert인 <insert> 태그를 호출한다.
+      sqlSession.insert("StudentMapper.insert", student);
       // 이때 , 저장할 데이터를 담고 있는 beans를 파라미터로 전달하고, 자동으로 생성된 pk는 beans에 저장된다
-      result = professor.getProfNo();
+      result = student.getStuDno();
     } catch (Exception e) {
       logger.error(e.getMessage());
     }

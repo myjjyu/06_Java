@@ -8,7 +8,7 @@ import lombok.Data;
   @Data
   public class Student {
     
-    private int studno; // 학번
+    private int stuDno; // 학번
     private String name; // 이름
     private String userid; // 아이디 (ex: ansel414)
     private int grade; // 학년

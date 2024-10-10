@@ -23,7 +23,7 @@ public class App03 {
     System.out.print("수정할 위치: ");
     String loc = scanner.nextLine();
 
-    System.out.print("수정할 학과 번호: ");
+    System.out.print("현재 학과 번호: ");
     int deptNo = scanner.nextInt();
 
     scanner.close();

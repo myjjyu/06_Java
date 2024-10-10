@@ -8,7 +8,7 @@
   <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. --> 
     <resultMap type="kr.gilju.models.Student" id="student"> 
         <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. --> 
-        <result property="studno" column="studno" /> 
+        <result property="stuDno" column="studno" /> 
         <result property="name" column="name" /> 
         <result property="userid" column="userid" /> 
         <result property="grade" column="grade" /> 
@@ -33,7 +33,7 @@
     <!-- 데이터 삭제를 위한 기능 정의 --> 
     <delete id="delete" 
             parameterType="kr.gilju.models.Student"> 
-         DELETE FROM student WHERE studno=#{studno};
+         DELETE FROM student WHERE studno=#{stuDno};
     </delete> 
  
   <!-- 데이터 갱신을 위한 기능 정의 --> 
@@ -41,7 +41,7 @@
             parameterType="kr.gilju.models.Student">
         UPDATE student 
         SET name=#{name}, userid=#{userid}, grade=#{grade}, idnum=#{idnum}, birthdate=#{birthdate}, tel=#{tel}, height=#{height}, weight=#{weight}, deptno=#{deptNo}, profno=#{profNo}
-        WHERE studno=#{studno};    
+        WHERE studno=#{stuDno};    
     </update> 
  
     <!-- 단일행 조회를 위한 기능 정의 --> 
@@ -50,7 +50,7 @@
         resultMap="student"> 
         SELECT studno, name, userid, grade, idnum, birthdate, tel, height, weight, deptno, profno 
         FROM student 
-        WHERE studno = #{studno};
+        WHERE studno = #{stuDno};
     </select> 
  
     <!-- 다중행 조회를 위한 기능 정의 --> 
