@@ -35,7 +35,7 @@ public class App03 {
     /** 3) 데이터베이스 접속 */
     SqlSession sqlSession = MyBatisConnectionFactory.getSqlSession();
 
-    /** 4) delete 를 수행할 데이터 생성 */
+    /** 4) 수정을 수행할 데이터 생성 */
     Department model = new Department();
     model.setDeptno(deptno);
     model.setDname(dname);

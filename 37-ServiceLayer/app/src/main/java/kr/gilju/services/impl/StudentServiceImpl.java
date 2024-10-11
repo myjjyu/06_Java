@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import kr.gilju.exceptions.ServiceNoResultException;
-import kr.gilju.models.Professor;
 import kr.gilju.models.Student;
 import kr.gilju.services.StudentService;
 
@@ -28,7 +27,7 @@ public class StudentServiceImpl implements StudentService {
 
   @Override
   public Student addItem(Student params) throws ServiceNoResultException, Exception {
-    Student result = null;
+    Student result;
 
       // insert문 수행
       // 리턴되는 값은 저장된 데이터의 수
@@ -48,7 +47,7 @@ public class StudentServiceImpl implements StudentService {
 
   @Override
   public Student editItem(Student params) throws ServiceNoResultException, Exception {
-    Student result = null;
+    Student result;
 
       // update 문 수행 -> 리턴되는 값은 수정된 데이터의 수
       int rows = sqlSession.update("StudentMapper.update", params);
@@ -68,12 +67,7 @@ public class StudentServiceImpl implements StudentService {
 
   @Override
   public int deleteItem(Student params) throws ServiceNoResultException, Exception {
-      int result = 0;
-
-      // 학과 데이터 삭제를 위한 참조관계에 있는 자식 데이터를 순서대로 삭제
-      Professor professor = new Professor();
-      professor.setDeptno(params.getDeptno());
-      sqlSession.delete("ProfessorMapper.deleteByDeptno", professor);
+      int result;
 
       // delete문 수행 -> 리턴되는 값은 수정된 데이터의 수
       result = sqlSession.delete("StudentMapper.delete", params);

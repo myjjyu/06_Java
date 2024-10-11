@@ -7,7 +7,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import kr.gilju.MyBatisConnectionFactory;
+import kr.gilju.exceptions.ServiceNoResultException;
 import kr.gilju.models.Student;
+import kr.gilju.services.StudentService;
+import kr.gilju.services.impl.StudentServiceImpl;
 
 public class Student01 {
   public static void main(String[] args) {
@@ -44,50 +47,66 @@ public class Student01 {
     int weight = scanner.nextInt();
 
     System.out.print("학과번호: ");
-    int deptNo = scanner.nextInt();
+    int deptno = scanner.nextInt();
 
     System.out.print("담당교수번호: ");
-    Integer profNo = scanner.nextInt();
+    Integer profno = scanner.nextInt();
 
     scanner.close();
 
     // 입력값을 로그로 기록함
-    logger.debug("입력된 데이터:" + name + ", " + userid + ", " + grade + ", " + idnum + ", " + birthdate + ", " + tel + ", " + height + ", " + weight + ", " + deptNo + ", " + profNo);
+    logger.debug("입력된 데이터:" + name + ", " + userid + ", " + grade + ", " + idnum + ", " + birthdate + ", " + tel + ", "
+        + height + ", " + weight + ", " + deptno + ", " + profno);
     /** 2) 데이터베이스 접속 */
     SqlSession sqlSession = MyBatisConnectionFactory.getSqlSession();
 
     /** 3)insert 를 수행할 데이터생성 */
-    Student student = new Student(); // Student 객체 생성
-        student.setName(name);
-        student.setUserid(userid);
-        student.setGrade(grade);
-        student.setIdnum(idnum);
-        student.setBirthdate(birthdate);
-        student.setTel(tel);
-        student.setHeight(height);
-        student.setWeight(weight);
-        student.setDeptNo(deptNo);
-        student.setProfNo(profNo);
+    Student dept = new Student(); // Student 객체 생성
+    dept.setName(name);
+    dept.setUserid(userid);
+    dept.setGrade(grade);
+    dept.setIdnum(idnum);
+    dept.setBirthdate(birthdate);
+    dept.setTel(tel);
+    dept.setHeight(height);
+    dept.setWeight(weight);
+    dept.setDeptno(deptno);
+    dept.setProfno(profno);
 
-    /** 4) 데이터 저장 */
-    int result = 0;
+    /** 데이터 처리 수행 */
+    // 비즈니스 로직을 위한 service 객체 생성
+    StudentService studentService = new StudentServiceImpl(sqlSession);
+    // 저장된 결과를 리턴받기 위힌 beans 객체
+    Student result = null;
+
+    // 저장된 결과를 리턴받기 위한 beans객체
 
     try {
-     // StudentMapper라는 namespace를 갖는 xml에서
-     // id 값이 insert인 <insert> 태그를 호출한다.
-      sqlSession.insert("StudentMapper.insert", student);
-      // 이때 , 저장할 데이터를 담고 있는 beans를 파라미터로 전달하고, 자동으로 생성된 pk는 beans에 저장된다
-      result = student.getStuDno();
-    } catch (Exception e) {
+      result = studentService.addItem(dept);
+    } catch (ServiceNoResultException e) {
+      sqlSession.rollback();
+      logger.error("[저장된 결과가 없습니다.]");
       logger.error(e.getMessage());
+
+    } catch (Exception e) {
+      sqlSession.rollback();
+      logger.error("[SQL문 처리에 실패했습니다. Mapper를 확인하세요]");
+      logger.error(e.getMessage());
+
+    } finally {
+      sqlSession.commit();
     }
 
-    /** 결과판별 */
-    logger.info(result + "번 데이터 저장됨");
+    /** 처리 결과 출력 */
+    if (result != null) {
+      logger.debug("==========================================");
+      logger.debug(result.toString());
+      logger.debug("==========================================");
 
-    /** db 접속 해제 */
-    sqlSession.commit();
+    } else {
+      logger.error("저장된 데이터가 없습니다");
+    }
+    /** 데이터베이스 접속 해제 */
     sqlSession.close();
   }
 }
-

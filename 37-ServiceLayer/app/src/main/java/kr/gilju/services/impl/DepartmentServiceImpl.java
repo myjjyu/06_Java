@@ -73,11 +73,11 @@ public class DepartmentServiceImpl implements DepartmentService {
         // 학과 데이터 삭제를 위한 참조관계에 있는 자식 데이터를 순서대로 삭제
         Student student = new Student();
         student.setDeptno(params.getDeptno());
-        sqlSession.delete("StudentMapper.deleteByDeptno", student);
+        sqlSession.delete("StudentMapper.delete", student);
 
         Professor professor = new Professor();
         professor.setDeptno(params.getDeptno());
-        sqlSession.delete("ProfessorMapper.deleteByDeptno", professor);
+        sqlSession.delete("ProfessorMapper.delete", professor);
 
         // delete문 수행 -> 리턴되는 값은 수정된 데이터의 수
         result = sqlSession.delete("DepartmentMapper.delete", params);

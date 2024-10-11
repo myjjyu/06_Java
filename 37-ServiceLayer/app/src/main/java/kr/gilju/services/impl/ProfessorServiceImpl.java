@@ -27,7 +27,7 @@ public class ProfessorServiceImpl implements ProfessorService {
 
     @Override
     public Professor addItem(Professor params) throws ServiceNoResultException, Exception {
-      Professor result = null;
+      Professor result;
 
         // insert문 수행
         // 리턴되는 값은 저장된 데이터의 수
@@ -47,7 +47,7 @@ public class ProfessorServiceImpl implements ProfessorService {
 
     @Override
     public Professor editItem(Professor params) throws ServiceNoResultException, Exception {
-      Professor result = null;
+      Professor result;
 
         // update 문 수행 -> 리턴되는 값은 수정된 데이터의 수
         int rows = sqlSession.update("ProfessorMapper.update", params);
@@ -67,20 +67,17 @@ public class ProfessorServiceImpl implements ProfessorService {
 
     @Override
     public int deleteItem(Professor params) throws ServiceNoResultException, Exception {
-        int result = 0;
+        int result;
 
         // 학과 데이터 삭제를 위한 참조관계에 있는 자식 데이터를 순서대로 삭제
         Student student = new Student();
         student.setDeptno(params.getDeptno());
-        sqlSession.delete("StudentMapper.deleteByDeptno", student);
-
-        Professor professor = new Professor();
-        professor.setDeptno(params.getDeptno());
-        sqlSession.delete("ProfessorMapper.deleteByDeptno", professor);
+        sqlSession.delete("StudentMapper.delete", student);
 
 
         // delete문 수행 -> 리턴되는 값은 수정된 데이터의 수
         result = sqlSession.delete("ProfessorMapper.delete", params);
+
 
         // 삭제된 데이터가 없다면?
         if (result == 0) {
